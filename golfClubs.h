@@ -131,9 +131,9 @@ int nineIron(void){
     int swingValue;
     const char *nineIron[] = {
         "Specify the strength of your swing:\n",
-        "1 --> Light (3 - 13yd)\n",
-        "2 -- > Medium (14 - 24yd)\n",
-        "3 --> Hard (25 - 35yd)\n"
+        "1 --> Light (35 - 47yd)\n",
+        "2 -- > Medium (47 - 59yd)\n",
+        "3 --> Hard (59 - 71yd)\n"
     };
 
     int nineIronStrength = sizeof(nineIron) / sizeof(nineIron[0]);
