@@ -29,7 +29,7 @@ int main(void){
     int currentParOfHole = 3;
     bool inHole = false;
     
-    //An array of function pointer; the functions are the golf clubs
+    //An array of pointers to functions; the functions are the golf clubs functions in golfClubs.h
     int (*ptrClubs[8])(void) = {putter, wedge, nineIron, sevenIron, fiveIron, threeIron, threeWood, driver};
     //Randomizes the seeds that are used to select random values for the ranges of each golf club
     srand(time(NULL)); 
@@ -61,33 +61,33 @@ int main(void){
             swingDistance = (*ptrClubs[userChoice])();
         }
 
-        if(!inHole){ //Passes the information of the current hole to functions while the ball is not in the hole
+        if(!inHole){ //If the ball is not in the hole, increase swings by one, and pass the information of the current hole to functions
             switch(holeNumber){
             case 1:
                 swingsTaken++;
-                inHole = holes(swingDistance, 300, currentParOfHole);
+                inHole = holes(swingDistance, 300, currentParOfHole); //First Hole
                 break;
 
             case 2:
                 swingsTaken++;
                 currentParOfHole = 4;
-                inHole = holes(swingDistance, 500, currentParOfHole);  
+                inHole = holes(swingDistance, 500, currentParOfHole); //Second Hole
                 break;
 
             case 3:
                 swingsTaken++;
                 currentParOfHole = 3;
-                inHole = holes(swingDistance, 200, currentParOfHole);  
+                inHole = holes(swingDistance, 200, currentParOfHole); //Third Hole
                 break;
 
             case 4:
                 swingsTaken++;
                 currentParOfHole = 5;
-                inHole = holes(swingDistance, 700, currentParOfHole);  
+                inHole = holes(swingDistance, 700, currentParOfHole); //Fourth Hole
                 break;
             }
         }
-        else if(inHole){ //If the ball is in the hole, changes the hole number and par to the next one, as well as resetting the global variables
+        else if(inHole){ //If the ball is in the hole, change the hole number and par to the next one, as well as reset the global variables using functions
             switch(holeNumber){
             case 1:
                 holeNumber = 2;
@@ -124,12 +124,12 @@ int main(void){
     return 0;
 }
 
-//Prints the stroke number and the distance the ball traveled due to the swing for each hole. Returns boolean value to the main function to see if it is in the hole
+//Prints the number of strokes and the distance the ball traveled due to the swing for each hole.
 bool holes(int swingDistance, int holeLocation, int par){
     printf(COLOR_BOLD"\nStroke: %d\nThe golf ball traveled %d yards\n", swingsTaken, swingDistance); 
     printf(COLOR_OFF);
     distanceTraveled(swingDistance, holeLocation);
-    return inHole(holeLocation, par);
+    return inHole(holeLocation, par); //Calls inHole functions to return a boolean value to determine if the ball is in the hole
 }
 
 //Obtains the total distance the ball has traveled in relation to the hole position
@@ -181,7 +181,7 @@ void getScore(int par){
     int courseScore = swingsTaken - par;
     printf(COLOR_BOLD "Your score for this course is %d\n\n", courseScore);
     printf(COLOR_OFF);
-    finalScore(courseScore, false);
+    finalScore(courseScore, false); //finalScore is called to add the current score to the finalScore, and false is passed to not print the final score
 }
 
 //Sums the scores for each course to print the final score
