@@ -27,5 +27,5 @@ This is a personal project where I created a Golf Simulator program in C to test
 - Camel case naming conventions
 - Minimizing nesting of code blocks
 
-## File Information:
+## File Information
 The main branch includes the golfSimulator.c file, which serves as the main C file to be executed. The golfClubs.h file contains the code for the golf clubs. This header file was created specifically to handle the code related to the golf clubs. This ensures better organization for the project. Including all the club-related code in the main file would have made it less organized, especially given the number of clubs involved in the project.
