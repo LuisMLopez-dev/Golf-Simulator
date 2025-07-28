@@ -1,5 +1,5 @@
 # Overview
-This is a personal project where I created a Golf Simulator in C to test my C programming skills after completing the course, C for Engineers. I was inspired by several videos games that had a golf as a minigame, and I wanted to create a basic version of golf with a CLI. The completion time was about two weeks.
+This is a personal project where I created a Golf Simulator program in C to test my C programming skills after completing the course, C for Engineers. I was inspired by several videos games that had golf as a minigame, and I wanted to create a basic version of golf with a CLI. The completion time was about two weeks.
 
 ## Components Included
 - Framework for various golf holes
